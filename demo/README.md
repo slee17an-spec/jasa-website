@@ -23,7 +23,7 @@ di halaman utama `index.html` untuk meyakinkan calon klien.
 /demo
 ├─ landing-jasa.html
 ├─ bio-link.html
-├─ portfolio.html
+├─ portofolio.html
 ├─ portal-konten.html (redirect ke Bisikan Sufi)
 └─ README.md
 
@@ -35,7 +35,7 @@ di halaman utama `index.html` untuk meyakinkan calon klien.
 - `bio-link.html`  
   → Demo bio link usaha (alternatif Linktree)
 
-- `portfolio.html`  
+- `portofolio.html`  
   → Demo portofolio (menampilkan semua demo)
 
 - `portal-konten.html`  
@@ -49,7 +49,7 @@ Karena semua file berada di folder yang sama:
 - ✔ Gunakan link **relatif**
 landing-jasa.html
 bio-link.html
-portfolio.html
+portofolio.html
 
 - ❌ Jangan gunakan `/demo/` di dalam file demo
 
