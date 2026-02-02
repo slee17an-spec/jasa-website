@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- =========================
+     PLACEHOLDER SEO
+========================= -->
+<title>{{NAMA_PORTAL}} | {{TAGLINE_PORTAL}}</title>
+<meta name="description" content="{{DESKRIPSI_SEO}}">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Poppins, sans-serif;
+  background:radial-gradient(circle at top,#111,#000);
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  text-align:center;
+  padding:60px 20px 40px;
+}
+h1{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:12px;
+  background:linear-gradient(90deg,#ffd369,#ffffff,#ffd369);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.subtitle{
+  color:#ccc;
+  font-size:18px;
+  max-width:760px;
+  margin:0 auto;
+  line-height:1.6;
+}
+
+/* ===== GRID ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px 60px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#0b0b0b;
+  padding:22px;
+  border-radius:20px;
+  box-shadow:0 0 26px rgba(255,215,0,.25);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+
+.card h3{
+  color:#ffd369;
+  margin-bottom:8px;
+  font-size:20px;
+}
+.card p{
+  color:#ccc;
+  font-size:15px;
+  line-height:1.5;
+  margin-bottom:14px;
+}
+.card a{
+  color:#ffdd55;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ===== NAV ===== */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.nav a{
+  padding:8px 18px;
+  background:#111;
+  border-radius:30px;
+  font-size:14px;
+  color:#ffd369;
+  text-decoration:none;
+  border:1px solid rgba(255,215,0,.25);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  h1{font-size:32px}
+  .subtitle{font-size:16px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER PORTAL
+========================= -->
+<header>
+  <h1>{{JUDUL_PORTAL}}</h1>
+  <p class="subtitle">
+    {{DESKRIPSI_UTAMA}}
+  </p>
+</header>
+
+<!-- =========================
+     NAV KATEGORI
+========================= -->
+<div class="nav">
+  <a href="#">{{KATEGORI_1}}</a>
+  <a href="#">{{KATEGORI_2}}</a>
+  <a href="#">{{KATEGORI_3}}</a>
+  <a href="#">{{KATEGORI_4}}</a>
+</div>
+
+<!-- =========================
+     KONTEN
+========================= -->
+<div class="container">
+  <div class="grid">
+
+    <!-- ===== ITEM 1 ===== -->
+    <div class="card">
+      <h3>{{ARTIKEL_1_JUDUL}}</h3>
+      <p>{{ARTIKEL_1_RINGKASAN}}</p>
+      <a href="{{ARTIKEL_1_LINK}}">Baca Selengkapnya</a>
+    </div>
+
+    <!-- ===== ITEM 2 ===== -->
+    <div class="card">
+      <h3>{{ARTIKEL_2_JUDUL}}</h3>
+      <p>{{ARTIKEL_2_RINGKASAN}}</p>
+      <a href="{{ARTIKEL_2_LINK}}">Baca Selengkapnya</a>
+    </div>
+
+    <!-- ===== ITEM 3 ===== -->
+    <div class="card">
+      <h3>{{ARTIKEL_3_JUDUL}}</h3>
+      <p>{{ARTIKEL_3_RINGKASAN}}</p>
+      <a href="{{ARTIKEL_3_LINK}}">Baca Selengkapnya</a>
+    </div>
+
+    <!-- ===== ITEM 4 ===== -->
+    <div class="card">
+      <h3>{{ARTIKEL_4_JUDUL}}</h3>
+      <p>{{ARTIKEL_4_RINGKASAN}}</p>
+      <a href="{{ARTIKEL_4_LINK}}">Baca Selengkapnya</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+{{FOOTER_TEXT}}
+</footer>
+
+</body>
+</html>
