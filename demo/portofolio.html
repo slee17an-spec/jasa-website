@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portofolio Website | Contoh Proyek</title>
+
+<meta name="description" content="Contoh portofolio website sederhana untuk UMKM, jasa, bio link, dan portal konten statis.">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Poppins, sans-serif;
+  background:radial-gradient(circle at top,#111,#000);
+  color:#fff;
+  padding:50px 20px;
+  text-align:center;
+}
+
+h1{
+  font-size:40px;
+  font-weight:800;
+  margin-bottom:14px;
+  background:linear-gradient(90deg,#ffd369,#ffffff,#ffd369);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.subtitle{
+  color:#ccc;
+  max-width:720px;
+  margin:0 auto 50px;
+  line-height:1.6;
+}
+
+.grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.card{
+  background:#0b0b0b;
+  padding:26px;
+  border-radius:22px;
+  box-shadow:0 0 30px rgba(255,215,0,.25);
+  transition:.3s;
+  text-align:left;
+}
+
+.card:hover{transform:translateY(-6px)}
+
+.card h3{
+  color:#ffd369;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#ccc;
+  font-size:15px;
+  line-height:1.5;
+  margin-bottom:16px;
+}
+
+.card a{
+  display:inline-block;
+  padding:10px 18px;
+  background:linear-gradient(45deg,#ffcc00,#ff9900);
+  color:#000;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  font-size:14px;
+}
+
+footer{
+  margin-top:60px;
+  font-size:14px;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Portofolio Website</h1>
+<p class="subtitle">
+Contoh website sederhana yang dibuat untuk UMKM, jasa lokal,
+bio link, dan portal konten statis.<br>
+Fokus ke fungsi, kecepatan, dan kemudahan dipakai.
+</p>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Landing Jasa</h3>
+    <p>
+      Website 1 halaman untuk jasa & UMKM.
+      Fokus langsung ke WhatsApp agar cepat dapat pelanggan.
+    </p>
+    <a href="/demo/landing-jasa.html">Lihat Demo</a>
+  </div>
+
+  <div class="card">
+    <h3>Bio Link Usaha</h3>
+    <p>
+      Semua link penting usaha dalam satu halaman.
+      Alternatif Linktree, lebih cepat & milik sendiri.
+    </p>
+    <a href="/demo/bio-link.html">Lihat Demo</a>
+  </div>
+
+  <div class="card">
+    <h3>Portofolio</h3>
+    <p>
+      Halaman untuk menampilkan contoh proyek,
+      meningkatkan kepercayaan calon pelanggan.
+    </p>
+    <a href="/demo/portfolio.html">Halaman Ini</a>
+  </div>
+
+  <div class="card">
+    <h3>Portal Konten</h3>
+    <p>
+      Contoh portal konten statis tanpa database.
+      Cocok untuk artikel, edukasi, atau branding jangka panjang.
+    </p>
+    <a href="https://slee17an-spec.github.io/bisikan-sufi/" target="_blank">
+      Lihat Demo
+    </a>
+  </div>
+
+</div>
+
+<footer>
+© Demo Portofolio Website<br>
+Contoh sistem website sederhana & efisien
+</footer>
+
+</body>
+</html>
