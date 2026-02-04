@@ -371,20 +371,18 @@ for(let i=0;i<50;i++){
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[data-wa="true"]').forEach(function(btn){
     btn.addEventListener("click", function(e){
-      e.preventDefault(); // hentikan WA dulu
       if (typeof fbq === "function") {
         fbq('track', 'Lead', {
-          content_name: 'WhatsApp Click Test',
+          content_name: 'WhatsApp Click',
           content_category: 'Contact'
         });
-        alert("Lead event terkirim (TEST MODE)");
       }
     });
   });
 });
 </script>
 
-
 </body>
 </html>
+
 
