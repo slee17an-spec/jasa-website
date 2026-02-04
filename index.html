@@ -370,13 +370,17 @@ for(let i=0;i<50;i++){
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('a[data-wa="true"]').forEach(function(btn){
-    btn.addEventListener("click", function(){
+    btn.addEventListener("click", function(e){
       if (typeof fbq === "function") {
         fbq('track', 'Lead', {
           content_name: 'WhatsApp Click',
           content_category: 'Contact'
         });
       }
+      setTimeout(() => {
+        window.open(btn.href, '_blank');
+      }, 300);
+      e.preventDefault();
     });
   });
 });
@@ -384,24 +388,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
