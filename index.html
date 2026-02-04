@@ -342,9 +342,11 @@ Beberapa contoh website sederhana yang bisa langsung digunakan.
 <div class="cta">
   <a href="/order.html">Pesan Website</a>
   <a href="https://wa.me/6282296066117?text=Halo,%20saya%20ingin%20buat%20website%20untuk%20usaha%20saya."
-   data-wa="true">
+   data-wa="true"
+   target="_blank">
   Chat WhatsApp
 </a>
+
 
 </div>
 
@@ -365,9 +367,24 @@ for(let i=0;i<50;i++){
   part.appendChild(p);
 }
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[data-wa="true"]').forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (typeof fbq === "function") {
+        fbq('track', 'Lead', {
+          content_name: 'WhatsApp Click',
+          content_category: 'Contact'
+        });
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>
+
 
 
 
