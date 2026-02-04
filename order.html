@@ -11,6 +11,36 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
+<!-- ================= META PIXEL ================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1236740731713480');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1236740731713480&ev=PageView&noscript=1"/>
+</noscript>
+<!-- =============== END PIXEL =================== -->
+
+<!-- ===== VIEWCONTENT : ORDER PAGE ===== -->
+<script>
+if (typeof fbq === "function") {
+  fbq('track', 'ViewContent', {
+    content_name: 'Order Page',
+    content_category: 'Website Order'
+  });
+}
+</script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -39,7 +69,6 @@ h1{
   font-size:17px;
 }
 
-/* CARD */
 .card{
   max-width:520px;
   margin:0 auto;
@@ -118,31 +147,31 @@ Harga jelas sejak awal, tanpa biaya bulanan.
 
 <div class="card">
 
-  <label for="jenis">Jenis Website</label>
-  <select id="jenis" onchange="updateHarga()">
-    <option value="">-- Pilih --</option>
-    <option value="landing">Landing Jasa Siap WhatsApp</option>
-    <option value="biolink">Bio Link Usaha</option>
-    <option value="bundle">Bundle UMKM Praktis (Landing + Bio Link)</option>
-    <option value="portfolio">Portofolio Sederhana</option>
-    <option value="konten">Portal Konten Statis</option>
-  </select>
+<label for="jenis">Jenis Website</label>
+<select id="jenis" onchange="updateHarga()">
+  <option value="">-- Pilih --</option>
+  <option value="landing">Landing Jasa Siap WhatsApp</option>
+  <option value="biolink">Bio Link Usaha</option>
+  <option value="bundle">Bundle UMKM Praktis</option>
+  <option value="portfolio">Portofolio Sederhana</option>
+  <option value="konten">Portal Konten Statis</option>
+</select>
 
-  <div class="price-box">
-    Perkiraan Harga:
-    <div class="price" id="harga">—</div>
-  </div>
+<div class="price-box">
+  Perkiraan Harga:
+  <div class="price" id="harga">—</div>
+</div>
 
-  <div class="note">
-    *Harga sudah termasuk website online.<br>
-    Revisi ringan (teks/warna) 1–2 kali.
-  </div>
+<div class="note">
+*Harga sudah termasuk website online.<br>
+Revisi ringan (teks/warna) 1–2 kali.
+</div>
 
-  <div class="cta">
-    <a id="waLink" href="#">
-      Lanjut ke WhatsApp
-    </a>
-  </div>
+<div class="cta">
+  <a id="waLink" href="#" data-wa="true" target="_blank">
+    Lanjut ke WhatsApp
+  </a>
+</div>
 
 </div>
 
@@ -185,6 +214,18 @@ function updateHarga(){
     ? "https://wa.me/6282296066117?text=" + pesan
     : "#";
 }
+</script>
+
+<!-- ===== LEAD EVENT : WA CLICK ===== -->
+<script>
+document.getElementById("waLink").addEventListener("click", function(){
+  if (typeof fbq === "function") {
+    fbq('track', 'Lead', {
+      content_name: 'Order via WhatsApp',
+      content_category: 'Order'
+    });
+  }
+});
 </script>
 
 </body>
