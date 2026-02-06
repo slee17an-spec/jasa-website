@@ -1,0 +1,5 @@
+[ ] Judul website diganti
+[ ] Nomor WhatsApp diganti
+[ ] Nama usaha diganti
+[ ] Meta description dicek
+[ ] Test di HP
