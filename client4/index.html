@@ -1,125 +1,193 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Penjual Online Tolitoli | Respon Cepat</title>
-  <meta name="description" content="Penjual online terpercaya di Tolitoli. Respon cepat via WhatsApp. Aman & praktis.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Panel Usaha Lokal | Tolitoli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Panel informasi usaha lokal Tolitoli. Sistem kerja rapi, layanan jelas, dan kontak cepat.">
 
-  <!-- Meta untuk iklan -->
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Abdi Syaif">
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#111827;
+  --card:#1f2937;
+  --accent:#22c55e;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
 
-  <style>
-    :root {
-      --bg:#020617;
-      --card:#0f172a;
-      --accent:#22c55e;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-    }
+*{box-sizing:border-box}
 
-    * { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family:system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  min-height:100vh;
+}
 
-    body {
-      margin: 0;
-      font-family: system-ui, Arial, sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: var(--text);
-      line-height: 1.6;
-    }
+/* SIDEBAR */
+aside{
+  width:280px;
+  background:var(--panel);
+  padding:32px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
 
-    .wrap {
-      max-width: 520px;
-      margin: auto;
-      padding: 72px 20px;
-      text-align: center;
-    }
+aside h1{
+  font-size:1.4rem;
+  margin:0;
+}
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
+aside p{
+  color:var(--muted);
+  font-size:.95rem;
+}
 
-    p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 28px;
-    }
+.menu a{
+  display:block;
+  padding:10px 12px;
+  border-radius:8px;
+  color:var(--text);
+  text-decoration:none;
+  font-size:.95rem;
+}
 
-    .card {
-      background: var(--card);
-      padding: 28px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
+.menu a:hover{
+  background:var(--card);
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px;
-    }
+/* MAIN */
+main{
+  flex:1;
+  padding:48px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
 
-    ul li {
-      margin: 10px 0;
-      font-size: 1rem;
-    }
+/* CARD */
+.card{
+  background:var(--card);
+  padding:28px;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-    .cta {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #022c22;
-      text-decoration: none;
-      border-radius: 12px;
-    }
+.card h2{
+  margin:0;
+  font-size:1.3rem;
+}
 
-    .trust {
-      margin-top: 18px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+.card p{
+  color:var(--muted);
+  font-size:.95rem;
+}
 
-    footer {
-      margin-top: 32px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-  </style>
+.badge{
+  align-self:flex-start;
+  padding:4px 10px;
+  font-size:.8rem;
+  border-radius:999px;
+  background:rgba(34,197,94,.15);
+  color:var(--accent);
+}
+
+/* CTA */
+.cta{
+  margin-top:auto;
+  padding:12px;
+  text-align:center;
+  border-radius:10px;
+  background:var(--accent);
+  color:#022c22;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  position:fixed;
+  bottom:16px;
+  right:24px;
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  body{flex-direction:column}
+  aside{width:100%}
+  footer{position:static;text-align:center;padding:16px}
+}
+</style>
 </head>
 <body>
 
-<div class="wrap">
+<!-- SIDEBAR -->
+<aside>
+  <h1>Usaha Lokal Tolitoli</h1>
+  <p>Panel informasi & layanan<br>siap dihubungi</p>
 
-  <h1>Penjual Online Tolitoli</h1>
-  <p>Produk pilihan · Respon cepat · Transaksi aman</p>
-
-  <div class="card">
-    <ul>
-      <li>✅ Fast respon via WhatsApp</li>
-      <li>✅ Produk siap dikirim</li>
-      <li>✅ Prioritas wilayah Tolitoli</li>
-      <li>✅ Bisa tanya sebelum beli</li>
-    </ul>
-
-    <a class="cta" href="https://wa.me/6282296066117">
-      Chat WhatsApp Sekarang
-    </a>
-
-    <div class="trust">
-      Online setiap hari · Balas cepat
-    </div>
+  <div class="menu">
+    <a href="#">Ringkasan Usaha</a>
+    <a href="#">Layanan</a>
+    <a href="#">Wilayah</a>
+    <a href="#">Kontak</a>
   </div>
 
-  <footer>
-    Abdi Syaif · Tolitoli<br>
-    https://abdisyaif.com
-  </footer>
+  <a class="cta" href="https://wa.me/6282296066117">WhatsApp Sekarang</a>
+</aside>
 
-</div>
+<!-- MAIN CONTENT -->
+<main>
+
+  <div class="card">
+    <span class="badge">Profil</span>
+    <h2>Tentang Usaha</h2>
+    <p>
+      Usaha lokal yang melayani kebutuhan pelanggan
+      dengan sistem kerja rapi, transparan, dan bertanggung jawab.
+    </p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Layanan</span>
+    <h2>Jenis Layanan</h2>
+    <p>
+      Melayani kebutuhan harian, perbaikan, maupun pemesanan
+      sesuai bidang usaha.
+    </p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Wilayah</span>
+    <h2>Area Layanan</h2>
+    <p>
+      Fokus wilayah Tolitoli dan sekitarnya
+      dengan respon cepat.
+    </p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Kontak</span>
+    <h2>Hubungi Kami</h2>
+    <p>
+      Konsultasi langsung via WhatsApp
+      tanpa formulir ribet.
+    </p>
+    <a class="cta" href="https://wa.me/6282296066117">Chat WhatsApp</a>
+  </div>
+
+</main>
+
+<footer>
+© Abdi Syaif · abdisyaif.com
+</footer>
 
 </body>
 </html>
