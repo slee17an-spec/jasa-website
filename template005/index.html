@@ -53,4 +53,154 @@
 
     p {
       font-size: 1.05rem;
-      color: var(
+      color: var(--text-soft);
+      margin: 0 0 20px 0;
+      max-width: 720px;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      max-width: 760px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-soft);
+      margin: 72px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-width: 720px;
+    }
+
+    ul li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text-soft);
+      font-size: 1.02rem;
+    }
+
+    ul li:last-child {
+      border-bottom: none;
+    }
+
+    .cta {
+      background: var(--bg-soft);
+      padding: 48px;
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .cta p {
+      color: var(--text-main);
+      font-size: 1.1rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 1.05rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .cta a:hover {
+      border-color: var(--accent);
+    }
+
+    footer {
+      margin-top: 120px;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 72px 20px 96px;
+      }
+      .cta {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <!-- Pernyataan Posisi -->
+    <section>
+      <h1>Abdi Syaif</h1>
+      <p class="lead">
+        Saya membantu individu dan organisasi membangun website yang tenang, terarah,
+        dan mencerminkan cara berpikir profesional—bukan sekadar tampil, tetapi bermakna.
+      </p>
+      <p>
+        Pendekatan saya tidak berangkat dari tren, melainkan dari posisi, konteks,
+        dan tujuan jangka panjang. Website adalah medium reputasi, bukan etalase promosi.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Cara Berpikir & Nilai Kerja -->
+    <section>
+      <h2>Cara Berpikir & Nilai Kerja</h2>
+      <p>
+        Saya bekerja dengan asumsi bahwa kejelasan lebih bernilai daripada keramaian,
+        dan ketepatan lebih penting daripada kecepatan.
+      </p>
+      <ul>
+        <li>Website harus mencerminkan cara Anda mengambil keputusan.</li>
+        <li>Desain yang dewasa lahir dari batasan, bukan dari hiasan.</li>
+        <li>Struktur yang rapi lebih berumur panjang daripada gimmick visual.</li>
+        <li>Setiap elemen ada untuk alasan, bukan kebiasaan.</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Jenis Kolaborasi -->
+    <section>
+      <h2>Kolaborasi yang Cocok</h2>
+      <p>
+        Saya biasanya bekerja dengan pihak yang memahami bahwa membangun kehadiran digital
+        adalah proses berpikir, bukan sekadar produksi.
+      </p>
+      <ul>
+        <li>Profesional yang ingin memposisikan diri dengan tenang dan kredibel.</li>
+        <li>Pemilik usaha yang mengutamakan kejelasan arah daripada penjualan instan.</li>
+        <li>Tim kecil yang menghargai struktur, fokus, dan diskusi yang jujur.</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Mari Berdialog</h2>
+      <p>
+        Jika Anda sedang memikirkan bagaimana website seharusnya merepresentasikan
+        posisi dan cara kerja Anda, kita bisa mulai dari percakapan sederhana.
+      </p>
+      <a href="https://wa.me/6282296066117" target="_blank" rel="noopener">
+        Mulai percakapan di WhatsApp →
+      </a>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Abdi Syaif · Jasa Website Profesional · Indonesia
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
