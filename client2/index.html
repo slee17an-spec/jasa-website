@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Jasa Service Elektronik Profesional | Abdi Syaif</title>
-  <meta name="description" content="Jasa service elektronik panggilan dan online. TV, kulkas, mesin cuci, kipas, dan perangkat elektronik lainnya. Cepat, jujur, dan terpercaya.">
+  <meta name="description" content="Jasa service elektronik profesional. TV, kulkas, mesin cuci, dan elektronik rumah tangga. Cepat, jujur, dan terpercaya.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- SEO dasar -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="Abdi Syaif">
 
-  <!-- Style inline agar simple & aman -->
   <style>
     :root {
-      --primary:#111;
-      --gray:#f3f4f6;
+      --primary:#0f172a;     /* navy gelap */
+      --secondary:#2563eb;   /* biru layanan */
+      --accent:#f59e0b;      /* aksen kuning */
+      --light:#f8fafc;
+      --gray:#e5e7eb;
+      --dark:#020617;
     }
 
     * {
@@ -26,45 +27,57 @@
       font-family: system-ui, Arial, sans-serif;
       color: #111;
       line-height: 1.6;
-      background: #fff;
+      background: var(--light);
     }
 
+    /* HERO */
     header {
-      padding: 64px 24px;
-      max-width: 1000px;
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--primary), #020617);
+      color: white;
+    }
+
+    header .wrap {
+      max-width: 1100px;
       margin: auto;
     }
 
     header h1 {
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       margin-bottom: 12px;
     }
 
     header p {
       font-size: 1.1rem;
-      color: #444;
+      max-width: 600px;
+      color: #e5e7eb;
     }
 
     .cta {
       display: inline-block;
-      margin-top: 16px;
-      padding: 14px 22px;
-      background: var(--primary);
-      color: #fff;
+      margin-top: 20px;
+      padding: 14px 24px;
+      background: var(--accent);
+      color: #111;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
+    /* SECTION */
     section {
-      padding: 56px 24px;
-      max-width: 1000px;
+      padding: 64px 24px;
+    }
+
+    .wrap {
+      max-width: 1100px;
       margin: auto;
     }
 
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 24px;
+      font-size: 2.1rem;
+      margin-bottom: 32px;
+      color: var(--primary);
     }
 
     .grid {
@@ -77,31 +90,66 @@
     }
 
     .box {
-      padding: 24px;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+      padding: 28px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid var(--gray);
+    }
+
+    .box h3 {
+      margin-top: 0;
+      color: var(--secondary);
     }
 
     .highlight {
-      background: var(--gray);
-    }
-
-    ul {
-      padding-left: 18px;
+      background: #eef2ff;
     }
 
     .price {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      margin: 12px 0;
+      color: var(--primary);
     }
 
-    footer {
-      padding: 32px 24px;
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--secondary);
+      color: white;
       text-align: center;
-      background: var(--gray);
-      margin-top: 48px;
-      font-size: 0.95rem;
+    }
+
+    .cta-section h2 {
+      color: white;
+    }
+
+    .cta-section p {
+      color: #e0e7ff;
+    }
+
+    .cta.dark {
+      background: white;
+      color: var(--secondary);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #cbd5f5;
+      padding: 48px 24px;
+    }
+
+    footer .wrap {
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
     }
   </style>
 </head>
@@ -109,89 +157,96 @@
 
 <!-- HERO -->
 <header>
-  <h1>Jasa Service Elektronik Profesional</h1>
-  <p>
-    Melayani perbaikan berbagai perangkat elektronik rumah tangga.
-    Dikerjakan dengan jujur, rapi, dan bertanggung jawab.
-  </p>
-  <a class="cta" href="https://wa.me/6282296066117">Hubungi via WhatsApp</a>
+  <div class="wrap">
+    <h1>Jasa Service Elektronik Profesional</h1>
+    <p>
+      Melayani perbaikan elektronik rumah tangga dengan standar kerja rapi,
+      transparan, dan bertanggung jawab.
+    </p>
+    <a class="cta" href="https://wa.me/6282296066117">Hubungi via WhatsApp</a>
+  </div>
 </header>
 
 <!-- LAYANAN -->
 <section>
-  <h2>Layanan yang Kami Tangani</h2>
-  <div class="grid grid-3">
-    <div class="box">
-      <h3>TV & Audio</h3>
-      <p>TV LED/LCD, speaker, amplifier, dan perangkat audio lainnya.</p>
-    </div>
-    <div class="box">
-      <h3>Kulkas & Mesin Cuci</h3>
-      <p>Masalah dingin, mesin tidak berputar, bocor, dan kelistrikan.</p>
-    </div>
-    <div class="box">
-      <h3>Elektronik Rumah Tangga</h3>
-      <p>Kipas angin, rice cooker, dispenser, dan perangkat lainnya.</p>
+  <div class="wrap">
+    <h2>Layanan yang Ditangani</h2>
+    <div class="grid grid-3">
+      <div class="box">
+        <h3>TV & Audio</h3>
+        <p>TV LED/LCD, speaker, amplifier, dan perangkat audio.</p>
+      </div>
+      <div class="box">
+        <h3>Kulkas & Mesin Cuci</h3>
+        <p>Masalah dingin, mesin tidak berputar, dan kelistrikan.</p>
+      </div>
+      <div class="box">
+        <h3>Elektronik Rumah Tangga</h3>
+        <p>Kipas angin, rice cooker, dispenser, dan lainnya.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- KEUNGGULAN -->
 <section class="highlight">
-  <h2>Kenapa Pilih Kami?</h2>
-  <div class="grid grid-3">
-    <div class="box">
-      <h3>Berpengalaman</h3>
-      <p>Menangani berbagai jenis kerusakan elektronik lapangan.</p>
-    </div>
-    <div class="box">
-      <h3>Transparan</h3>
-      <p>Kerusakan dijelaskan, biaya disampaikan di awal.</p>
-    </div>
-    <div class="box">
-      <h3>Bisa Konsultasi</h3>
-      <p>Boleh tanya dulu sebelum perbaikan dilakukan.</p>
+  <div class="wrap">
+    <h2>Kenapa Pilih Kami?</h2>
+    <div class="grid grid-3">
+      <div class="box">
+        <h3>Berpengalaman</h3>
+        <p>Menangani berbagai jenis kerusakan lapangan.</p>
+      </div>
+      <div class="box">
+        <h3>Transparan</h3>
+        <p>Kerusakan dan biaya dijelaskan sebelum dikerjakan.</p>
+      </div>
+      <div class="box">
+        <h3>Bisa Konsultasi</h3>
+        <p>Tanya dulu sebelum service dilakukan.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PAKET -->
+<!-- HARGA -->
 <section>
-  <h2>Estimasi Layanan</h2>
-  <div class="grid grid-3">
-    <div class="box">
-      <h3>Cek & Diagnosa</h3>
-      <p class="price">Mulai Rp 50.000</p>
-      <p>Pengecekan awal kerusakan.</p>
-    </div>
-    <div class="box">
-      <h3>Perbaikan Ringan</h3>
-      <p class="price">Mulai Rp 150.000</p>
-      <p>Penggantian komponen ringan.</p>
-    </div>
-    <div class="box">
-      <h3>Perbaikan Lanjutan</h3>
-      <p class="price">Sesuai Kerusakan</p>
-      <p>Dijelaskan sebelum dikerjakan.</p>
+  <div class="wrap">
+    <h2>Estimasi Layanan</h2>
+    <div class="grid grid-3">
+      <div class="box">
+        <h3>Cek & Diagnosa</h3>
+        <p class="price">Mulai Rp 50.000</p>
+      </div>
+      <div class="box">
+        <h3>Perbaikan Ringan</h3>
+        <p class="price">Mulai Rp 150.000</p>
+      </div>
+      <div class="box">
+        <h3>Perbaikan Lanjutan</h3>
+        <p class="price">Sesuai Kerusakan</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section>
-  <h2>Butuh Service Sekarang?</h2>
-  <p>
-    Hubungi kami untuk konsultasi dan penjadwalan service.
-  </p>
-  <a class="cta" href="https://wa.me/6282296066117">Chat WhatsApp Sekarang</a>
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Butuh Service Sekarang?</h2>
+    <p>Konsultasi dan penjadwalan via WhatsApp.</p>
+    <a class="cta dark" href="https://wa.me/6282296066117">Chat WhatsApp Sekarang</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <strong>Abdi Syaif</strong><br>
-  Jasa Service Elektronik & Solusi Digital<br><br>
-  WhatsApp: 0822-9606-6117<br>
-  Website: https://abdisyaif.com
+  <div class="wrap">
+    <strong>Abdi Syaif</strong><br>
+    Jasa Service Elektronik & Solusi Digital<br><br>
+    WhatsApp: 0822-9606-6117<br>
+    Website: <a href="https://abdisyaif.com">abdisyaif.com</a>
+  </div>
 </footer>
 
 </body>
