@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9fafb;
+  color: #111;
+}
+
+header, section, footer {
+  padding: 24px;
+  max-width: 960px;
+  margin: auto;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
