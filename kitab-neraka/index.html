@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -48,32 +47,49 @@ h1{
   font-weight:normal;
 }
 </style>
-
 </head>
 
 <body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgm" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <div id="cinema">
   <div id="scene" class="scene"></div>
 </div>
 
 <script>
 (function(){
-  // HARD LOCK USER INPUT
+  /* HARD LOCK USER INPUT */
   ['wheel','touchmove','keydown','mousedown'].forEach(e=>{
     window.addEventListener(e,function(ev){ev.preventDefault();},{passive:false});
   });
 
+  /* AUDIO AUTOPLAY (SCHEMA A) */
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0;
+  bgm.muted = true;
+  bgm.play().catch(()=>{});
+
+  function fadeInAudio(target=0.3, step=0.01, interval=200){
+    bgm.muted = false;
+    let v = 0;
+    const f = setInterval(()=>{
+      v += step;
+      bgm.volume = Math.min(v, target);
+      if(v >= target) clearInterval(f);
+    }, interval);
+  }
+
+  /* SCENES */
   const scenes = [
 `KITAB NERAKA`,
-
 `diam`,
-
 `tidak ada yang perlu dilakukan`,
-
 `tidak ada yang perlu dipercepat`,
-
 `BAGIAN I — FONDASI KESADARAN`,
-
 `Bab 1: Ketika Hidup Tidak Lagi Bisa Diboongi
 
 Ada titik dalam hidup ketika penjelasan lama tidak lagi bekerja.
@@ -82,364 +98,40 @@ Nasihat yang dulu diyakini kini terasa jauh dari kenyataan batin.
 
 Bukan karena hidup menjadi lebih buruk.
 Justru karena ada kejujuran yang mulai tumbuh.`,
-
 `Manusia sering mengira masalahnya ada di luar: keadaan, orang lain, nasib.
 Padahal yang berubah adalah satu hal sederhana:
 ia mulai merasakan ketidaksesuaiannya sendiri.`,
-
 `Kesalahpahaman umum:
 banyak orang mengira pencarian diri dimulai karena keinginan menjadi lebih hebat.
 Kenyataannya, pencarian diri sering dimulai karena tidak sanggup lagi berpura-pura.`,
-
 `Di dalam batin, terjadi pergeseran halus.
 Pikiran yang biasanya sibuk membenarkan mulai kelelahan.
 Emosi yang biasanya ditekan mulai muncul tanpa izin.`,
-
 `Jebakan pertama di sini adalah ingin segera “menjadi benar”.
 Ingin cepat menemukan jawaban agar rasa tidak nyaman hilang.
 
 Padahal pengenalan diri tidak dimulai dari jawaban.
 Ia dimulai dari keberanian tinggal bersama pertanyaan tanpa kabur.`,
-
 `Bab 2: Kesadaran Bukan Sesuatu yang Harus Ditambah
 
 Banyak orang merasa dirinya kurang sadar.
 Seolah kesadaran adalah sesuatu yang belum dimiliki.`,
-
 `Kesadaran bukan benda yang bisa ditambah.
 Ia bukan keterampilan yang bisa dikuasai.
 
 Yang terjadi sebenarnya adalah:
 kesadaran tertutup oleh kebiasaan bereaksi.`,
-
 `Pikiran bergerak cepat, menilai, menamai, menyimpulkan.
 Perasaan mengikuti, mengeras menjadi sikap.
 Tubuh menyesuaikan diri, menegang atau menghindar.`,
-
 `Di sela-sela itu, kesadaran tetap ada.
 Hanya tidak diperhatikan.`,
-
 `Jebakannya adalah berusaha “meningkatkan” kesadaran dengan cara memaksa.
 Padahal yang dibutuhkan bukan dorongan,
 melainkan pengurangan kebisingan batin.`,
-
 `Pengenalan diri dimulai saat seseorang berhenti menambah,
 dan mulai melihat apa yang sudah berlangsung.`,
-
-`BAGIAN II — TUBUH, PIKIRAN, DAN PERASAAN`,
-
-`Bab 3: Tubuh Tidak Pernah Berbohong
-
-Tubuh selalu lebih jujur daripada pikiran.
-Ia merespons sebelum alasan dibuat.
-
-Ketika takut, tubuh menegang.
-Ketika marah, napas berubah.
-Ketika sedih, dada terasa berat.`,
-
-`Kesalahpahaman umum:
-manusia mengira tubuh hanyalah alat.
-Padahal tubuh adalah medan pertama kesadaran.`,
-
-`Pikiran bisa menyangkal.
-Perasaan bisa disembunyikan.
-Tubuh tidak.`,
-
-`Mekanisme batin yang sering terjadi:
-ketika tubuh memberi sinyal, pikiran buru-buru menafsirkan.
-Lalu tafsir itu dianggap kenyataan.`,
-
-`Jebakannya adalah hidup di kepala,
-dan hanya sesekali “menggunakan” tubuh.`,
-
-`Pengenalan diri menjadi lebih jujur
-ketika seseorang mulai mendengarkan tubuh
-tanpa segera mengomentarinya.`,
-
-`Bab 4: Pikiran Bukan Diri
-
-Pikiran berbicara tanpa henti.
-Ia memberi narasi tentang siapa kita, apa yang terjadi, dan apa yang seharusnya.`,
-
-`Banyak orang mengira suara ini adalah dirinya.
-Padahal pikiran hanyalah aktivitas.`,
-
-`Yang sebenarnya terjadi:
-pikiran muncul, berjalan, lalu menghilang.
-Diri tidak ikut muncul dan menghilang bersamanya.`,
-
-`Jebakan paling umum adalah berdebat dengan pikiran.
-Mencoba mengalahkannya atau memperbaikinya.`,
-
-`Pengenalan diri terjadi saat seseorang menyadari:
-pikiran bisa diamati
-tanpa harus dituruti atau ditolak.`,
-
-`Bab 5: Perasaan Tidak Butuh Penilaian
-
-Perasaan datang tanpa izin.
-Ia tidak tunduk pada logika.`,
-
-`Banyak orang berusaha mengelola perasaan
-dengan cara menghakimi: baik–buruk, pantas–tidak pantas.`,
-
-`Kesalahpahaman ini membuat perasaan menjadi masalah.
-Padahal perasaan hanyalah reaksi energi dalam tubuh.`,
-
-`Mekanisme batin yang sering terjadi:
-perasaan muncul → pikiran menamai → identitas terbentuk.`,
-
-`Jebakannya adalah melekat pada cerita di balik perasaan,
-bukan pada perasaan itu sendiri.`,
-
-`Pengenalan diri menjadi dalam
-saat perasaan diizinkan hadir
-tanpa diberi identitas.`,
-
-`BAGIAN III — EGO DAN TOPENG`,
-
-`Bab 6: Ego Tidak Jahat, Tapi Licin
-
-Ego bukan musuh.
-Ia terbentuk untuk melindungi.`,
-
-`Masalahnya bukan ego ada,
-tetapi ketika ego dipercaya sepenuhnya.`,
-
-`Ego menyukai konsistensi.
-Ia ingin citra diri tetap utuh.`,
-
-`Kesalahpahaman umum:
-mengira ego bisa dihancurkan.`,
-
-`Yang terjadi sebenarnya:
-ego berubah bentuk sesuai tekanan.`,
-
-`Jebakannya adalah mengganti satu ego dengan ego lain
-yang terasa lebih halus.`,
-
-`Pengenalan diri terjadi
-saat ego dikenali tanpa diperangi.`,
-
-`Bab 7: Topeng yang Dipakai Terlalu Lama
-
-Topeng awalnya adalah alat sosial.
-Lama-lama ia terasa seperti wajah asli.`,
-
-`Manusia sering lupa kapan mulai berpura-pura.
-Karena topeng yang dipakai lama
-akhirnya terasa nyata.`,
-
-`Kesalahpahaman umum:
-mengira kejujuran berarti membuka semua hal ke semua orang.`,
-
-`Yang lebih jujur adalah mengetahui
-kapan topeng bekerja, dan mengapa.`,
-
-`Jebakan di sini adalah membenci topeng
-tanpa memahami fungsinya.`,
-
-`Pengenalan diri adalah kemampuan
-melepas topeng di dalam batin,
-meski di luar masih diperlukan.`,
-
-`BAGIAN IV — LUKA DAN BAYANGAN DIRI`,
-
-`Bab 8: Luka yang Tidak Pernah Pergi
-
-Luka batin tidak selalu terasa sakit.
-Kadang ia terasa datar, dingin, atau mati rasa.`,
-
-`Kesalahpahaman umum:
-mengira luka sembuh karena waktu.`,
-
-`Yang terjadi sebenarnya:
-luka yang tidak disadari
-menentukan cara melihat dunia.`,
-
-`Jebakannya adalah menghindari luka
-dengan identitas kuat.`,
-
-`Pengenalan diri menuntut keberanian
-untuk melihat luka tanpa drama.`,
-
-`Bab 9: Bayangan yang Ditolak
-
-Setiap sifat yang ditolak
-tidak menghilang.
-Ia bersembunyi.`,
-
-`Bayangan diri muncul lewat reaksi berlebihan
-terhadap orang lain.`,
-
-`Kesalahpahaman umum:
-mengira bayangan adalah hal buruk.`,
-
-`Padahal bayangan hanyalah bagian diri
-yang tidak diberi ruang.`,
-
-`Jebakan terbesar adalah merasa sudah “bersih”.
-Itu tanda bayangan sedang bekerja diam-diam.`,
-
-`BAGIAN V — KEINGINAN, KETAKUTAN, DAN KELEKATAN`,
-
-`Bab 10: Keinginan Tidak Pernah Puas
-
-Keinginan menjanjikan kepuasan.
-Namun kepuasan selalu sementara.`,
-
-`Kesalahpahaman umum:
-mengira masalahnya adalah keinginan yang salah.`,
-
-`Yang terjadi sebenarnya:
-keinginan bekerja sebagai pengalih perhatian
-dari kekosongan batin.`,
-
-`Jebakannya adalah memerangi keinginan
-tanpa memahami fungsinya.`,
-
-`Bab 11: Ketakutan yang Mengatur Diam-Diam
-
-Ketakutan jarang muncul sebagai rasa takut.
-Ia sering muncul sebagai kontrol, perfeksionisme, atau penundaan.`,
-
-`Kesalahpahaman umum:
-mengira ketakutan adalah kelemahan.`,
-
-`Padahal ketakutan adalah mekanisme bertahan hidup
-yang berlebihan.`,
-
-`Pengenalan diri terjadi
-saat ketakutan dilihat sebagai proses,
-bukan identitas.`,
-
-`Bab 12: Kelekatan yang Disalahartikan sebagai Cinta
-
-Banyak kelekatan memakai nama cinta.
-Padahal ia lahir dari takut kehilangan diri.`,
-
-`Jebakan besar adalah mengorbankan kejujuran
-demi rasa aman.`,
-
-`Pengenalan diri menuntut keberanian
-untuk melihat perbedaan antara mencintai
-dan melekat.`,
-
-`BAGIAN VI — KESADARAN DAN PENGAMAT`,
-
-`Bab 13: Siapa yang Menyadari?
-
-Ketika pikiran diam,
-sesuatu tetap ada.`,
-
-`Itulah pengamat.
-Bukan sebagai sosok,
-tetapi sebagai kehadiran.`,
-
-`Kesalahpahaman umum:
-mencari pengamat sebagai objek.`,
-
-`Padahal pengamat adalah yang melihat,
-bukan yang dilihat.`,
-
-`Bab 14: Hadir Tanpa Menguasai
-
-Kesadaran bukan kendali.
-Ia tidak mengatur hidup.
-
-Ia hanya melihat dengan jernih.`,
-
-`Jebakan besar adalah menjadikan kesadaran
-sebagai identitas baru.`,
-
-`BAGIAN VII — KEMATIAN DALAM HIDUP`,
-
-`Bab 15: Mati Sebelum Mati
-
-Yang mati bukan tubuh.
-Yang mati adalah gambaran diri.`,
-
-`Setiap kejujuran sejati
-mengakhiri satu ilusi.`,
-
-`Kesalahpahaman umum:
-mengira ini pengalaman mistis.
-
-Padahal ini sangat membumi.`,
-
-`Bab 16: Kehilangan yang Membuka Ruang
-
-Kehilangan memaksa pelepasan.
-Jika tidak dilawan,
-ia membuka ruang luas.`,
-
-`Jebakan di sini adalah ingin cepat pulih
-tanpa benar-benar melepas.`,
-
-`BAGIAN VIII — KEHIDUPAN SEHARI-HARI YANG SADAR`,
-
-`Bab 17: Hidup Biasa yang Tidak Biasa
-
-Kesadaran tidak membuat hidup istimewa.
-Ia membuat hidup jujur.
-
-Piring tetap dicuci.
-Masalah tetap datang.
-
-Bedanya: tidak ada kepalsuan batin.`,
-
-`Bab 18: Relasi Tanpa Topeng Batin
-
-Hubungan berubah
-ketika tidak lagi digunakan
-untuk menutup kekosongan diri.`,
-
-`BAGIAN IX — MANUSIA DAN SESUATU YANG MELIPUTINYA`,
-
-`Bab 19: Bukan Terpisah, Bukan Melebur
-
-Manusia bukan pusat.
-Juga bukan korban.
-
-Ia bagian dari keseluruhan
-tanpa perlu definisi besar.`,
-
-`Kesalahpahaman umum:
-mencari makna kosmis
-untuk lari dari hidup sehari-hari.`,
-
-`Bab 20: Diam yang Tidak Bisa Dijelaskan
-
-Ada sesuatu
-yang tidak bisa dijadikan konsep.
-
-Ia hanya bisa dialami
-dalam keheningan jujur.`,
-
-`BAGIAN X — PENUTUP TANPA PENUTUP`,
-
-`Bab 21: Tidak Ada Akhir
-
-Pengenalan diri tidak selesai.
-Ia tidak memberi gelar.`,
-
-`Jika buku ini berguna,
-bukan karena isinya,
-tetapi karena ia tidak menutup pencarian.`,
-
-`Tidak ada yang perlu diikuti.
-Tidak ada yang perlu dipercaya.`,
-
-`Yang ada hanya satu undangan sunyi:
-lihatlah dirimu sendiri
-tanpa menambah,
-tanpa mengurangi.`,
-
-`Dan dari sana,
-hidup berjalan apa adanya.`,
-
 `diam`,
-
 `tidak ada akhir`
   ];
 
@@ -459,9 +151,16 @@ hidup berjalan apa adanya.`,
     setTimeout(show, DURATION);
   }
 
+  /* START */
   el.innerHTML = "<h1>KITAB NERAKA</h1>";
   el.classList.add("visible");
   i = 1;
+
+  /* AUDIO FADE IN AFTER OPENING */
+  setTimeout(()=>{
+    fadeInAudio(0.28);
+  }, 8000);
+
   setTimeout(show, DURATION);
 })();
 </script>
