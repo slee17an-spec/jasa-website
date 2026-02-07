@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jasa Service Profesional | Kota Anda</title>
+
+<style>
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* COLORS */
+:root {
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --accent: #22c55e;
+  --muted: #6b7280;
+  --bg-soft: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* GLOBAL */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+section {
+  padding: 56px 0;
+}
+h1, h2, h3 {
+  line-height: 1.25;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+p {
+  color: var(--muted);
+}
+
+/* HERO */
+.hero {
+  background: var(--bg-soft);
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin-bottom: 12px;
+}
+.hero strong {
+  color: var(--primary);
+}
+.hero-cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+.btn-whatsapp {
+  background: var(--accent);
+  color: #052e16;
+}
+.btn-phone {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* SERVICES */
+.services {
+  background: #f9fafb;
+}
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.service {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 6px;
+}
+.service h3 {
+  margin-bottom: 8px;
+}
+
+/* WHY US */
+.why {
+  background: var(--bg-soft);
+}
+.why-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.why-item {
+  padding: 16px;
+  border-left: 4px solid var(--primary);
+  background: #f9fafb;
+}
+
+/* AREA */
+.area {
+  background: #f9fafb;
+}
+.area-box {
+  background: var(--bg-soft);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--bg-soft);
+}
+.testimonial-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.testimonial {
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 6px;
+}
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.testimonial strong {
+  color: #111827;
+}
+
+/* CTA BAR */
+.cta-bar {
+  background: var(--primary);
+  color: #ecfeff;
+  text-align: center;
+  padding: 48px 16px;
+}
+.cta-bar p {
+  color: #d1fae5;
+  margin-bottom: 20px;
+}
+.cta-bar .btn-whatsapp {
+  background: #ffffff;
+  color: var(--primary-dark);
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 40px 0;
+}
+footer p {
+  color: #cbd5f5;
+  font-size: 0.9rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+  .service-list,
+  .why-list,
+  .testimonial-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Jasa Service Profesional <br><strong>Kota Anda & Sekitarnya</strong></h1>
+      <p>
+        Layanan cepat, transparan, dan terpercaya untuk kebutuhan rumah & bisnis Anda.
+        Ditangani langsung oleh teknisi berpengalaman.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/6281234567890" class="btn btn-whatsapp">💬 Chat WhatsApp Sekarang</a>
+        <a href="tel:081234567890" class="btn btn-phone">📞 Telepon Langsung</a>
+      </div>
+    </div>
+    <div>
+      <p>
+        ✔ Respon cepat<br>
+        ✔ Harga jelas sebelum kerja<br>
+        ✔ Garansi layanan
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+    <h2>Layanan Kami</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>Service & Perbaikan</h3>
+        <p>Penanganan masalah secara profesional dan tepat sasaran.</p>
+      </div>
+      <div class="service">
+        <h3>Instalasi & Pemasangan</h3>
+        <p>Pemasangan rapi, aman, dan sesuai standar.</p>
+      </div>
+      <div class="service">
+        <h3>Perawatan Berkala</h3>
+        <p>Mencegah kerusakan dengan perawatan rutin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="container">
+    <h2>Kenapa Pilih Kami</h2>
+    <div class="why-list">
+      <div class="why-item">Teknisi berpengalaman & terverifikasi</div>
+      <div class="why-item">Harga transparan, tanpa biaya tersembunyi</div>
+      <div class="why-item">Banyak pelanggan tetap & repeat order</div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area">
+  <div class="container">
+    <h2>Area Layanan</h2>
+    <div class="area-box">
+      <p>
+        Kami melayani: Kota Anda, Kecamatan A, Kecamatan B, dan area sekitarnya.
+        Hubungi kami untuk memastikan jangkauan layanan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2>Apa Kata Pelanggan</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>“Respon cepat dan hasil kerjanya rapi. Sangat puas.”</p>
+        <strong>— Budi, Kota Anda</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Harga jelas dari awal, teknisinya sopan dan profesional.”</p>
+        <strong>— Siti, Kecamatan A</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Sudah langganan, selalu bisa diandalkan.”</p>
+        <strong>— Andi, Kecamatan B</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-bar">
+  <div class="container">
+    <h2>Butuh Layanan Sekarang?</h2>
+    <p>Chat WhatsApp kami untuk respon tercepat.</p>
+    <a href="https://wa.me/6281234567890" class="btn btn-whatsapp">💬 Hubungi via WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p><strong>Alamat</strong><br>
+      Jl. Contoh No. 123, Kota Anda</p>
+    </div>
+    <div>
+      <p><strong>Jam Operasional</strong><br>
+      Senin – Sabtu<br>
+      08.00 – 18.00</p>
+    </div>
+    <div>
+      <p><strong>Kontak</strong><br>
+      WhatsApp: 0812-3456-7890<br>
+      Telepon: 0812-3456-7890</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reserved for simple enhancements if needed
+</script>
+
+</body>
+</html>
