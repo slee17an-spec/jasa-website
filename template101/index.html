@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jasa Website - Solusi Website Profesional untuk Bisnis Anda. Kami menyediakan layanan pembuatan website berkualitas tinggi di Tolitoli, Sulawesi Tengah.">
+    <meta name="keywords" content="jasa website, pembuatan website, web design, web development, Tolitoli">
+    <meta name="author" content="Jasa Website">
+    <title>Jasa Website - Solusi Website Profesional untuk Bisnis Anda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e3a8a;
+            --accent: #06b6d4;
+            --accent-dark: #0891b2;
+            --accent-light: #14b8a6;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --border: #334155;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-dark);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(6,182,212,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Services */
+        .services {
+            background: var(--bg-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 58, 138, 0.3) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            color: var(--text-secondary);
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .service-features li::before {
+            content: '✓ ';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: var(--accent-light);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--bg-dark);
+        }
+
+        .testimonials-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .testimonial-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-button:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--accent);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .features-grid,
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Jasa Website</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#why-us">Mengapa Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimoni</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Solusi Website Profesional untuk Bisnis Anda</h1>
+            <p>Kami menciptakan website berkualitas tinggi yang meningkatkan visibilitas dan konversi bisnis Anda</p>
+            <a href="https://wa.me/082296066117?text=Halo%20Jasa%20Website%2C%20saya%20ingin%20konsultasi%20pembuatan%20website" class="cta-button" target="_blank">Hubungi via WhatsApp</a>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Proyek Selesai</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Klien Puas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Tahun Pengalaman</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us" id="why-us">
+        <h2 class="section-title">Mengapa Pilih Kami?</h2>
+        <p class="section-subtitle">Kami menawarkan solusi terbaik untuk kebutuhan website Anda</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Desain Modern</h3>
+                <p>Desain website yang modern, menarik, dan sesuai dengan tren terkini untuk meningkatkan brand awareness Anda</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive Mobile</h3>
+                <p>Website yang responsif dan optimal di semua perangkat, dari desktop hingga smartphone untuk jangkauan maksimal</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>SEO Optimized</h3>
+                <p>Optimasi SEO profesional untuk meningkatkan ranking di mesin pencari dan mendatangkan traffic organik</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Support 24/7</h3>
+                <p>Tim support profesional siap membantu Anda kapan saja untuk memastikan website selalu berjalan optimal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2 class="section-title">Layanan Kami</h2>
+        <p class="section-subtitle">Paket layanan lengkap untuk semua kebutuhan website Anda</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Website Bisnis</h3>
+                <p>Website profesional untuk bisnis Anda dengan fitur lengkap dan desain yang menarik</p>
+                <ul class="service-features">
+                    <li>Desain Custom</li>
+                    <li>Responsive Design</li>
+                    <li>Contact Form</li>
+                    <li>SEO Basic</li>
+                </ul>
+                <div class="service-price">Mulai dari Rp 2.000.000</div>
+                <a href="https://wa.me/082296066117?text=Saya%20tertarik%20dengan%20paket%20Website%20Bisnis" class="cta-button" target="_blank">Pesan Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛒</div>
+                <h3>E-Commerce</h3>
+                <p>Platform e-commerce lengkap untuk menjual produk online dengan sistem pembayaran terintegrasi</p>
+                <ul class="service-features">
+                    <li>Katalog Produk</li>
+                    <li>Shopping Cart</li>
+                    <li>Payment Gateway</li>
+                    <li>Admin Panel</li>
+                </ul>
+                <div class="service-price">Mulai dari Rp 5.000.000</div>
+                <a href="https://wa.me/082296066117?text=Saya%20tertarik%20dengan%20paket%20E-Commerce" class="cta-button" target="_blank">Pesan Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>Landing Page</h3>
+                <p>Landing page yang dioptimalkan untuk konversi tinggi dan meningkatkan penjualan produk atau layanan Anda</p>
+                <ul class="service-features">
+                    <li>High Conversion</li>
+                    <li>A/B Testing</li>
+                    <li>Analytics</li>
+                    <li>Fast Loading</li>
+                </ul>
+                <div class="service-price">Mulai dari Rp 1.500.000</div>
+                <a href="https://wa.me/082296066117?text=Saya%20tertarik%20dengan%20paket%20Landing%20Page" class="cta-button" target="_blank">Pesan Sekarang</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Website Maintenance</h3>
+                <p>Layanan pemeliharaan website untuk memastikan website Anda selalu aman, cepat, dan up-to-date</p>
+                <ul class="service-features">
+                    <li>Security Updates</li>
+                    <li>Backup Regular</li>
+                    <li>Performance Monitoring</li>
+                    <li>Bug Fixes</li>
+                </ul>
+                <div class="service-price">Mulai dari Rp 500.000/bulan</div>
+                <a href="https://wa.me/082296066117?text=Saya%20tertarik%20dengan%20paket%20Website%20Maintenance" class="cta-button" target="_blank">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio Kami</h2>
+        <p class="section-subtitle">Lihat beberapa proyek terbaik yang telah kami kerjakan</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">🌐</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">Website Bisnis</span>
+                    <h3>PT Maju Jaya Indonesia</h3>
+                    <p>Website perusahaan dengan desain modern dan fitur lengkap untuk meningkatkan brand awareness</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🛍️</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">E-Commerce</span>
+                    <h3>Toko Online Fashion</h3>
+                    <p>Platform e-commerce fashion dengan sistem pembayaran terintegrasi dan inventory management</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">📱</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">Landing Page</span>
+                    <h3>Aplikasi Mobile Startup</h3>
+                    <p>Landing page untuk aplikasi mobile dengan conversion rate tinggi dan design yang eye-catching</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🏥</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">Website Bisnis</span>
+                    <h3>Klinik Kesehatan Modern</h3>
+                    <p>Website klinik dengan appointment system dan informasi layanan kesehatan yang lengkap</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🍕</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">E-Commerce</span>
+                    <h3>Restoran Online Delivery</h3>
+                    <p>Platform food delivery dengan menu management dan real-time order tracking system</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">📚</div>
+                <div class="portfolio-content">
+                    <span class="portfolio-category">Website Bisnis</span>
+                    <h3>Platform Edukasi Online</h3>
+                    <p>Website pembelajaran online dengan course management dan student progress tracking</p>
+                    <a href="#" class="portfolio-link">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Testimoni Klien</h2>
+        <p class="section-subtitle">Kepuasan klien adalah prioritas utama kami</p>
+        <div class="testimonials-container">
+            <div class="testimonial-card active">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Jasa Website sangat profesional dan responsif. Website yang mereka buat untuk bisnis kami meningkatkan penjualan hingga 300%. Sangat merekomendasikan!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">BJ</div>
+                    <div class="testimonial-info">
+                        <h4>Budi Jaya</h4>
+                        <p>PT Maju Jaya Indonesia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Tim mereka sangat memahami kebutuhan bisnis kami. Proses pembuatan website cepat dan hasilnya melebihi ekspektasi. Terima kasih Jasa Website!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SR</div>
+                    <div class="testimonial-info">
+                        <h4>Siti Rahayu</h4>
+                        <p>Toko Online Fashion</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Desain website mereka modern dan user-friendly. Support 24/7 mereka sangat membantu ketika ada masalah. Investasi terbaik untuk bisnis kami!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AK</div>
+                    <div class="testimonial-info">
+                        <h4>Ahmad Kusuma</h4>
+                        <p>Klinik Kesehatan Modern</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Luar biasa! Website e-commerce mereka dilengkapi dengan fitur-fitur canggih dan mudah digunakan. Penjualan online kami meningkat signifikan sejak menggunakan layanan mereka."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DP</div>
+                    <div class="testimonial-info">
+                        <h4>Dewi Putri</h4>
+                        <p>Restoran Online Delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="nav-button" onclick="prevTestimonial()">❮</button>
+                <button class="nav-button" onclick="nextTestimonial()">❯</button>
+            </div>
+            <div class="dots">
+                <span class="dot active" onclick="goToTestimonial(0)"></span>
+                <span class="dot" onclick="goToTestimonial(1)"></span>
+                <span class="dot" onclick="goToTestimonial(2)"></span>
+                <span class="dot" onclick="goToTestimonial(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jasa Website</h3>
+                <p>Kami adalah penyedia layanan pembuatan website profesional yang berpengalaman lebih dari 5 tahun. Komitmen kami adalah memberikan solusi website terbaik untuk kesuksesan bisnis Anda.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank">f</a>
+                    <a href="https://instagram.com" class="social-link" target="_blank">📷</a>
+                    <a href="https://linkedin.com" class="social-link" target="_blank">in</a>
+                    <a href="https://twitter.com" class="social-link" target="_blank">𝕏</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <p>Tolitoli, Sulawesi Tengah, Indonesia</p>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <p><a href="https://wa.me/082296066117" style="color: var(--text-secondary); text-decoration: none;" target="_blank">082296066117</a></p>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <p><a href="https://abdisyaif.com" style="color: var(--text-secondary); text-decoration: none;" target="_blank">abdisyaif.com</a></p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Website Bisnis</a></li>
+                    <li><a href="#services">E-Commerce</a></li>
+                    <li><a href="#services">Landing Page</a></li>
+                    <li><a href="#services">Website Maintenance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Konsultasi Gratis</h3>
+                <p>Hubungi kami sekarang untuk konsultasi gratis tentang kebutuhan website Anda. Tim kami siap membantu!</p>
+                <a href="https://wa.me/082296066117?text=Saya%20ingin%20konsultasi%20gratis%20tentang%20pembuatan%20website" class="cta-button" target="_blank" style="display: inline-block; margin-top: 1rem;">Konsultasi Gratis</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jasa Website. Semua hak dilindungi. | Dibuat dengan ❤️ untuk kesuksesan bisnis Anda</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const dots = document.querySelectorAll('.dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach(card => card.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(nextTestimonial, 5000);
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
