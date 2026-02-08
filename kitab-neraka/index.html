@@ -1,170 +1,47 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KITAB NERAKA</title> <style> html, body { margin: 0; padding: 0; background: #0a0a0a; color: #e6e6e6; font-family: Georgia, "Times New Roman", serif; height: 100%; overflow: hidden; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KITAB NERAKA</title>
-
-<style>
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-  background:#060606;
-  color:#eaeaea;
-  overflow:hidden;
-  font-family: Georgia, "Times New Roman", serif;
+#stage {
+position: fixed;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 12vh 10vw;
+box-sizing: border-box;
 }
 
-#cinema{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12vh 10vw;
-  box-sizing:border-box;
+.scene {
+max-width: 900px;
+text-align: center;
+line-height: 1.7;
+font-size: clamp(18px, 2.4vw, 28px);
+opacity: 0;
+transition: opacity 3s ease;
+white-space: pre-wrap;
 }
 
-.scene{
-  max-width:920px;
-  text-align:center;
-  line-height:1.8;
-  font-size:clamp(18px,2.3vw,28px);
-  opacity:0;
-  transition:opacity 4s ease;
-  white-space:pre-wrap;
+.scene.show {
+opacity: 1;
 }
 
-.scene.visible{
-  opacity:1;
+.scene.hide {
+opacity: 0;
 }
 
-h1{
-  font-size:clamp(36px,6vw,68px);
-  letter-spacing:0.28em;
-  font-weight:normal;
+h1 {
+font-size: clamp(32px, 6vw, 64px);
+letter-spacing: 0.2em;
+font-weight: normal;
+}
+
+.small {
+font-size: clamp(14px, 1.6vw, 18px);
+opacity: 0.75;
+}
+
+.pause {
+height: 1px;
 }
 </style>
-</head>
 
-<body>
-
-<!-- BACKGROUND MUSIC -->
-<audio id="bgm" loop preload="auto">
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<div id="cinema">
-  <div id="scene" class="scene"></div>
-</div>
-
-<script>
-(function(){
-  /* HARD LOCK USER INPUT */
-  ['wheel','touchmove','keydown','mousedown'].forEach(e=>{
-    window.addEventListener(e,function(ev){ev.preventDefault();},{passive:false});
-  });
-
-  /* AUDIO AUTOPLAY (SCHEMA A) */
-  const bgm = document.getElementById("bgm");
-  bgm.volume = 0;
-  bgm.muted = true;
-  bgm.play().catch(()=>{});
-
-  function fadeInAudio(target=0.3, step=0.01, interval=200){
-    bgm.muted = false;
-    let v = 0;
-    const f = setInterval(()=>{
-      v += step;
-      bgm.volume = Math.min(v, target);
-      if(v >= target) clearInterval(f);
-    }, interval);
-  }
-
-  /* SCENES */
-  const scenes = [
-`KITAB NERAKA`,
-`diam`,
-`tidak ada yang perlu dilakukan`,
-`tidak ada yang perlu dipercepat`,
-`BAGIAN I — FONDASI KESADARAN`,
-`Bab 1: Ketika Hidup Tidak Lagi Bisa Diboongi
-
-Ada titik dalam hidup ketika penjelasan lama tidak lagi bekerja.
-Kata-kata yang dulu menenangkan sekarang terdengar kosong.
-Nasihat yang dulu diyakini kini terasa jauh dari kenyataan batin.
-
-Bukan karena hidup menjadi lebih buruk.
-Justru karena ada kejujuran yang mulai tumbuh.`,
-`Manusia sering mengira masalahnya ada di luar: keadaan, orang lain, nasib.
-Padahal yang berubah adalah satu hal sederhana:
-ia mulai merasakan ketidaksesuaiannya sendiri.`,
-`Kesalahpahaman umum:
-banyak orang mengira pencarian diri dimulai karena keinginan menjadi lebih hebat.
-Kenyataannya, pencarian diri sering dimulai karena tidak sanggup lagi berpura-pura.`,
-`Di dalam batin, terjadi pergeseran halus.
-Pikiran yang biasanya sibuk membenarkan mulai kelelahan.
-Emosi yang biasanya ditekan mulai muncul tanpa izin.`,
-`Jebakan pertama di sini adalah ingin segera “menjadi benar”.
-Ingin cepat menemukan jawaban agar rasa tidak nyaman hilang.
-
-Padahal pengenalan diri tidak dimulai dari jawaban.
-Ia dimulai dari keberanian tinggal bersama pertanyaan tanpa kabur.`,
-`Bab 2: Kesadaran Bukan Sesuatu yang Harus Ditambah
-
-Banyak orang merasa dirinya kurang sadar.
-Seolah kesadaran adalah sesuatu yang belum dimiliki.`,
-`Kesadaran bukan benda yang bisa ditambah.
-Ia bukan keterampilan yang bisa dikuasai.
-
-Yang terjadi sebenarnya adalah:
-kesadaran tertutup oleh kebiasaan bereaksi.`,
-`Pikiran bergerak cepat, menilai, menamai, menyimpulkan.
-Perasaan mengikuti, mengeras menjadi sikap.
-Tubuh menyesuaikan diri, menegang atau menghindar.`,
-`Di sela-sela itu, kesadaran tetap ada.
-Hanya tidak diperhatikan.`,
-`Jebakannya adalah berusaha “meningkatkan” kesadaran dengan cara memaksa.
-Padahal yang dibutuhkan bukan dorongan,
-melainkan pengurangan kebisingan batin.`,
-`Pengenalan diri dimulai saat seseorang berhenti menambah,
-dan mulai melihat apa yang sudah berlangsung.`,
-`diam`,
-`tidak ada akhir`
-  ];
-
-  const el = document.getElementById("scene");
-  let i = 0;
-  const DURATION = 9000;
-  const FADE = 4000;
-
-  function show(){
-    if(i >= scenes.length) return;
-    el.classList.remove("visible");
-    setTimeout(()=>{
-      el.textContent = scenes[i];
-      el.classList.add("visible");
-      i++;
-    }, FADE);
-    setTimeout(show, DURATION);
-  }
-
-  /* START */
-  el.innerHTML = "<h1>KITAB NERAKA</h1>";
-  el.classList.add("visible");
-  i = 1;
-
-  /* AUDIO FADE IN AFTER OPENING */
-  setTimeout(()=>{
-    fadeInAudio(0.28);
-  }, 8000);
-
-  setTimeout(show, DURATION);
-})();
-</script>
-
-</body>
-</html>
+</head> <body> <div id="stage"> <div id="scene" class="scene"></div> </div> <script> (function(){ // Neutralize scroll & input window.addEventListener('wheel', e => e.preventDefault(), {passive:false}); window.addEventListener('touchmove', e => e.preventDefault(), {passive:false}); window.addEventListener('keydown', e => { if (["ArrowDown","ArrowUp","PageDown","PageUp"," "].includes(e.key)) { e.preventDefault(); } }); const scenes = [ `KITAB NERAKA`, `diam`, `tidak ada yang perlu dilakukan`, `tidak ada yang perlu dipercepat`, `BAGIAN I — FONDASI KESADARAN`, `Bab 1: Ketika Hidup Tidak Lagi Bisa Diboongi Ada titik dalam hidup ketika penjelasan lama tidak lagi bekerja. Kata-kata yang dulu menenangkan sekarang terdengar kosong. Nasihat yang dulu diyakini kini terasa jauh dari kenyataan batin. Bukan karena hidup menjadi lebih buruk. Justru karena ada kejujuran yang mulai tumbuh.`, `Manusia sering mengira masalahnya ada di luar: keadaan, orang lain, nasib. Padahal yang berubah adalah satu hal sederhana: ia mulai merasakan ketidaksesuaiannya sendiri.`, `Kesalahpahaman umum: banyak orang mengira pencarian diri dimulai karena keinginan menjadi lebih hebat. Kenyataannya, pencarian diri sering dimulai karena tidak sanggup lagi berpura-pura.`, `Pengenalan diri tidak dimulai dari jawaban. Ia dimulai dari keberanian tinggal bersama pertanyaan tanpa kabur.`, `Bab 2: Kesadaran Bukan Sesuatu yang Harus Ditambah Kesadaran bukan benda yang bisa ditambah. Ia bukan keterampilan yang bisa dikuasai. Yang terjadi sebenarnya adalah: kesadaran tertutup oleh kebiasaan bereaksi.`, `Pengenalan diri dimulai saat seseorang berhenti menambah, dan mulai melihat apa yang sudah berlangsung.`, `BAGIAN II — TUBUH, PIKIRAN, DAN PERASAAN`, `Bab 3: Tubuh Tidak Pernah Berbohong Tubuh selalu lebih jujur daripada pikiran. Ia merespons sebelum alasan dibuat.`, `Bab 4: Pikiran Bukan Diri Pikiran muncul, berjalan, lalu menghilang. Diri tidak ikut muncul dan menghilang bersamanya.`, `Bab 5: Perasaan Tidak Butuh Penilaian Perasaan datang tanpa izin. Ia tidak tunduk pada logika.`, `BAGIAN III — EGO DAN TOPENG`, `Bab 6: Ego Tidak Jahat, Tapi Licin Ego bukan musuh. Ia terbentuk untuk melindungi.`, `Bab 7: Topeng yang Dipakai Terlalu Lama Topeng awalnya adalah alat sosial. Lama-lama ia terasa seperti wajah asli.`, `BAGIAN IV — LUKA DAN BAYANGAN DIRI`, `Bab 8: Luka yang Tidak Pernah Pergi Luka yang tidak disadari menentukan cara melihat dunia.`, `Bab 9: Bayangan yang Ditolak Bayangan diri muncul lewat reaksi berlebihan terhadap orang lain.`, `BAGIAN V — KEINGINAN, KETAKUTAN, DAN KELEKATAN`, `Bab 10: Keinginan Tidak Pernah Puas Keinginan bekerja sebagai pengalih perhatian dari kekosongan batin.`, `Bab 11: Ketakutan yang Mengatur Diam-Diam Ketakutan jarang muncul sebagai rasa takut. Ia sering muncul sebagai kontrol.`, `Bab 12: Kelekatan yang Disalahartikan sebagai Cinta Banyak kelekatan memakai nama cinta. Padahal ia lahir dari takut kehilangan diri.`, `BAGIAN VI — KESADARAN DAN PENGAMAT`, `Bab 13: Siapa yang Menyadari? Ketika pikiran diam, sesuatu tetap ada.`, `Bab 14: Hadir Tanpa Menguasai Kesadaran bukan kendali. Ia hanya melihat.`, `BAGIAN VII — KEMATIAN DALAM HIDUP`, `Bab 15: Mati Sebelum Mati Yang mati adalah gambaran diri.`, `Bab 16: Kehilangan yang Membuka Ruang Jika tidak dilawan, kehilangan membuka ruang.`, `BAGIAN VIII — KEHIDUPAN SEHARI-HARI YANG SADAR`, `Bab 17: Hidup Biasa yang Tidak Biasa Kesadaran membuat hidup jujur.`, `Bab 18: Relasi Tanpa Topeng Batin`, `BAGIAN IX — MANUSIA DAN SESUATU YANG MELIPUTINYA`, `Bab 19: Bukan Terpisah, Bukan Melebur`, `Bab 20: Diam yang Tidak Bisa Dijelaskan Ia hanya bisa dialami dalam keheningan jujur.`, `BAGIAN X — PENUTUP TANPA PENUTUP`, `Bab 21: Tidak Ada Akhir Tidak ada yang perlu diikuti. Tidak ada yang perlu dipercaya. Yang ada hanya satu undangan sunyi: lihatlah dirimu sendiri tanpa menambah, tanpa mengurangi. Dan dari sana, hidup berjalan apa adanya.`, `diam`, `tidak ada penutup`, `hanya keheningan` ]; const sceneEl = document.getElementById('scene'); let index = 0; function showNext() { if (index >= scenes.length) return; sceneEl.classList.remove('show'); sceneEl.classList.add('hide'); setTimeout(() => { sceneEl.textContent = scenes[index]; sceneEl.classList.remove('hide'); sceneEl.classList.add('show'); index++; }, 3000); setTimeout(showNext, 9000); } // Title style sceneEl.innerHTML = "<h1>KITAB NERAKA</h1>"; sceneEl.classList.add('show'); index = 1; setTimeout(showNext, 9000); })(); </script> </body> </html>
